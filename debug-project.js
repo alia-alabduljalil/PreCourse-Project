@@ -10,11 +10,11 @@
  */
 function generateIntegersArray(firstNumber, lastNumber) {
   const integersArray = [];
-  whille (firstNumber < lastNumber)
+  while (firstNumber < lastNumber)
     integersArray.push(firstNumber);
     lastNumber++;
 
-  return IntegersArray;
+  return integersArray;
 }
 
 /**

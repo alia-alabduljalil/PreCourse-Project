@@ -19,7 +19,12 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  // Your code here
+  let oddSum = 0;
+  for (let i = 0; i < numbers.length; i++)
+    if (numbers[i] % 2 === 1) {
+      oddSum = numbers[i] + oddSum;
+    }
+  return oddSum;
 }
 
 /**
@@ -36,6 +41,12 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   // Your code here
+  let count = 0;
+  string = string.toLowerCase();
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] == c) count++;
+  }
+  return count++;
 }
 
 /**
@@ -90,7 +101,7 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   // Your code here
-}
+  
 
 /**
  * abbreviate(firstName, lastName):
@@ -149,7 +160,7 @@ function reverseString(string) {
   // Your code here
 }
 
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+//console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 // console.log(characterCount("Character Count is clever", "c"));
 // console.log(differences([11, 35, 52, 14, 56]));
 // console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
