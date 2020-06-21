@@ -19,12 +19,13 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  let oddSum = 0;
-  for (let i = 0; i < numbers.length; i++)
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 1) {
-      oddSum = numbers[i] + oddSum;
+      sum += numbers[i];
     }
-  return oddSum;
+  }
+  return sum;
 }
 
 /**
@@ -41,12 +42,14 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   // Your code here
-  let count = 0;
-  string = string.toLowerCase();
+  let counter = 0;
+
   for (let i = 0; i < string.length; i++) {
-    if (string[i] == c) count++;
+    if (c.toUpperCase() === string[i].toUpperCase()) {
+      counter++;
+    }
   }
-  return count++;
+  return counter;
 }
 
 /**
@@ -66,6 +69,11 @@ function characterCount(string, c) {
  */
 function differences(numbers) {
   // Your code here
+  const diff = [];
+  for (let i = 0; i < numbers.length - 1; i++) {
+    diff.push(numbers[i + 1] - numbers[i]);
+  }
+  return diff;
 }
 
 /**
@@ -86,6 +94,12 @@ function differences(numbers) {
  */
 function largestIncrement(numbers) {
   // Your code here
+  const diffs = differences(numbers);
+  let largest = diffs[0];
+  for (let i = 0; i < diffs.length; i++) {
+    if (diffs[i] > largest) largest = diffs[i];
+  }
+  return largest;
 }
 
 /**
@@ -101,7 +115,12 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   // Your code here
-  
+  let numsAfterX = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === x) numsAfterX = numbers.slice(i + 1, numbers.length);
+  }
+  return numsAfterX;
+}
 
 /**
  * abbreviate(firstName, lastName):
@@ -116,6 +135,10 @@ function afterX(numbers, x) {
  */
 function abbreviate(firstName, lastName) {
   // Your code here
+  let initials = "";
+  initials = firstName[0].toUpperCase();
+  initials += lastName[0].toUpperCase();
+  return initials;
 }
 
 /**
@@ -130,6 +153,9 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+
+  if (string === string.toUpperCase()) return true;
+  else return false;
 }
 
 /**
@@ -143,6 +169,10 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === x) return true;
+  }
+  return false;
   // Your code here
 }
 
@@ -157,7 +187,11 @@ function elementInArray(numbers, x) {
  *
  */
 function reverseString(string) {
-  // Your code here
+  let newStr = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    newStr += string[i];
+  }
+  return newStr;
 }
 
 //console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
